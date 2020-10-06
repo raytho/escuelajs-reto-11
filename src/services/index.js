@@ -1,9 +1,9 @@
-const MongoConnect = require('../lib/mongo');
+const MongoConnect = require("../lib/mongo");
 
 class ProductService {
   constructor() {
-    this.mongodb = new MongoConnect()
-    this.collection = 'products'
+    this.mongodb = new MongoConnect();
+    this.collection = "products";
   }
 
   async getProducts() {
@@ -24,7 +24,7 @@ class ProductService {
     }
   }
 
-  async updateProductById({ id, ...data }) {
+  async updateProductById(id, data) {
     try {
       const id = await this.mongodb.update(this.collection, id, data);
       return id;
